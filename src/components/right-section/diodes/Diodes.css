@@ -1,0 +1,17 @@
+.diodes {
+}
+
+.diodes-card {
+    width: 360px;
+}
+
+.diodes-card-header {
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+}
+
+.diode-img {
+    margin-left: 8px;
+    margin-right: 8px;
+}

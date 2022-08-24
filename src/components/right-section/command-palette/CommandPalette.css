@@ -1,0 +1,69 @@
+.command-palette {
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
+
+.command-palette-card {
+    width: 110px;
+    height: 40px;
+    border-radius: 20px;
+    border-color: white;
+    background: none;
+}
+
+.command-palette-card-body {
+    position: relative;
+}
+
+.command-palette-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+    position: absolute;
+}
+
+#pause-btn {
+    top: 9px;
+    left: 6px;
+}
+
+#run-btn {
+    top: 9px;
+    left: 40px;
+}
+
+#stop-btn {
+    top: 9px;
+    left: 74px;
+}
+
+#pause-btn-img,
+#pause-btn-img-hover {
+    position: absolute;
+}
+
+#run-btn-img,
+#run-btn-img-hover {
+    position: absolute;
+}
+
+#stop-btn-img,
+#stop-btn-img-hover {
+    position: absolute;
+}
+
+.command-palette-btn img {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.command-palette-btn:hover {
+    background: none;
+}
+
+.command-palette-btn:hover img.command-palette-btn-img,
+.command-palette-btn:not(:hover) img.command-palette-btn-img-hover {
+    opacity: 0;
+}
