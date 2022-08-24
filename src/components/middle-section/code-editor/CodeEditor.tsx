@@ -3,17 +3,17 @@ import {useEffect, useState} from "react";
 import init, {add, parse} from "wasm-lib";
 
 export function CodeEditor() {
-    const [value, setValue] = useState("// type your code...");
-    const handleEditorChange = (value: any) => {
-        setValue(value);
+    const [code, setCode] = useState("// type your code...");
+    const handleEditorChange = (code: any) => {
+        setCode(code);
     };
 
     useEffect(() => {
-        init()
+        init().then(_ => { /* do nothing */ });
     }, []);
 
     function test() {
-        const data = value.split('\n').filter(r => !r.startsWith('//'))[0];
+        const data = code.split('\n').filter(r => !r.startsWith('//'))[0];
         console.log(parse(data))
     }
 
@@ -26,7 +26,7 @@ export function CodeEditor() {
                     width={`100%`}
                     language={"cpp"}
                     theme={"vs-dark"}
-                    value={value}
+                    value={code}
                     defaultValue="// some comment"
                     onChange={handleEditorChange}
                 />
