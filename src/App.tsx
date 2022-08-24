@@ -1,25 +1,17 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import init, {add} from "wasm-lib";
-import LeftSection from "./components/left-section/LeftSection";
+import init, {add, parse} from "wasm-lib";
 import MiddleSection from "./components/middle-section/MiddleSection";
-import RightSection from "./components/right-section/RightSection";
 
 function App() {
   useEffect(() => {
-    init().then(() => {
-      test();
-    });
+    init();
   }, []);
-
-  function test() {
-    console.log(add(2, 2));
-  }
   return (
       <div className="App">
-        <LeftSection></LeftSection>
+        {/*<LeftSection></LeftSection>*/}
         <MiddleSection></MiddleSection>
-        <RightSection></RightSection>
+        {/*<RightSection></RightSection>*/}
       </div>
   );
 }
