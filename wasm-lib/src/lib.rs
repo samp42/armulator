@@ -10,8 +10,6 @@ pub fn parse(inst: String) -> String {
     return inst + " Yeah!"
 }
 
-
-
 #[test]
 fn add_test() {
     assert_eq!(1 + 1, add(1, 1));
