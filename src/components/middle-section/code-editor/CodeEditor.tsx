@@ -1,6 +1,7 @@
 import Editor from "@monaco-editor/react";
 import {useEffect, useState} from "react";
-import init, {add, parse} from "wasm-lib";
+import init, {parse} from "wasm-lib";
+import {testMemField} from "../../../../wasm-lib/pkg";
 
 export function CodeEditor() {
     const [value, setValue] = useState("// type your code...");
@@ -17,9 +18,14 @@ export function CodeEditor() {
         console.log(parse(data))
     }
 
+    function memStruct() {
+        console.log(testMemField());
+    }
+
     return (
         <div>
             <button onClick={test}>Test</button>
+            <button onClick={memStruct}>Test Mem Field</button>
             <div>
                 <Editor
                     height="100vh"
