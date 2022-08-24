@@ -1,6 +1,7 @@
 // use exec::memory::SerializableInstructionMemFields;
 use wasm_bindgen::prelude::*;
-use serde::{Serialize};
+
+use serde::{Serialize, Deserialize};
 
 mod exec;
 
@@ -21,28 +22,28 @@ pub fn parse(inst: String) -> String {
 //     }
 // }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize)]
 pub struct TestStruct {
-    pub register: String,
-    pub value: u32,
-    pub specialRegister: String,
-    pub specialValue: u32,
-    pub memAdr: u32,
-    pub memValue: u32,
+    pub reg: String,
+    pub val: u32,
+    pub special_reg: String,
+    pub special_val: u32,
+    pub mem_adr: u32,
+    pub mem_val: u32,
 }
 
 #[wasm_bindgen]
-pub fn testMemField() -> wasm_bindgen::JsValue {
-    let testStruct = TestStruct {
-        register: "r0".to_string(),
-        value: 0,
-        specialRegister: "cpsr".to_string(),
-        specialValue: 0,
-        memAdr: 0,
-        memValue: 0,
+pub fn test_mem_field() -> wasm_bindgen::JsValue {
+    let test_struct = TestStruct {
+        reg: "r0".to_string(),
+        val: 0,
+        special_reg: "cpsr".to_string(),
+        special_val: 0,
+        mem_adr: 0,
+        mem_val: 0,
     };
 
-    wasm_bindgen::JsValue::from_serde(&testStruct).unwrap()
+    wasm_bindgen::JsValue::from_serde(&test_struct).unwrap()
 }
 
 #[test]
