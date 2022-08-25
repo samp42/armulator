@@ -25,3 +25,4 @@ yarn-error.log*
 # wasm-lib/target
 /wasm-lib/target
 /wasm-lib/pkg
+/src/pkg

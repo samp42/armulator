@@ -1,11 +1,11 @@
 import Editor from "@monaco-editor/react";
 import {useEffect, useState} from "react";
-import init, {add, parse} from "wasm-lib";
+import init, {get_person, parse} from "../../../pkg/wasm_lib";
 
 export function CodeEditor() {
     const [code, setCode] = useState("// type your code...");
-    const handleEditorChange = (code: any) => {
-        setCode(code);
+    const handleEditorChange = (newCode: any) => {
+        setCode(newCode);
     };
 
     useEffect(() => {
@@ -17,8 +17,14 @@ export function CodeEditor() {
         console.log(parse(data))
     }
 
+    function logPerson() {
+        let person = get_person();
+        setCode(code + `\n${person.name} ${person.age} ${person.xyz}`);
+    }
+
     return (
         <div>
+            <button onClick={logPerson}>test struct</button>
             <button onClick={test}>Test</button>
             <div>
                 <Editor
