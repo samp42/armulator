@@ -28,6 +28,11 @@ pub fn get_person() -> JsValue {
     return JsValue::from_serde(&person).unwrap();
 }
 
+#[wasm_bindgen]
+pub fn run() -> bool {
+    true
+}
+
 #[test]
 fn add_test() {
     assert_eq!(1 + 1, add(1, 1));

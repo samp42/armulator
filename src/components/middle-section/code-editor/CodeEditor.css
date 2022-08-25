@@ -1,0 +1,21 @@
+.btnRun {
+    background-color: #3c3c3c;
+    border-radius: 10px;
+    border: 0;
+    padding: 5px 10px;
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btnRun:hover {
+    opacity: 75%;
+}
+
+.title {
+    position: absolute;
+    color: white;
+    left: 20px;
+    top: -15px;
+}
