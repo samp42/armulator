@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:wasm": "cd wasm-lib && wasm-pack build --target web --out-dir pkg",
+    "build:wasm": "rm -rf src/pkg wasm-lib/target && cd wasm-lib && wasm-pack build --target web --out-dir pkg && mv pkg ../src/pkg",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
