@@ -6,6 +6,11 @@ pub fn parse(inst: String) -> String {
     return inst + " Yeah!"
 }
 
+#[wasm_bindgen]
+pub fn run() -> bool {
+    true
+}
+
 #[test]
 fn add_test() {
     assert_eq!("hello Yeah!", parse("hello".to_string()));

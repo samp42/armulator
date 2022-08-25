@@ -1,6 +1,7 @@
 import Editor from "@monaco-editor/react";
+import './CodeEditor.css';
 import {useEffect, useState} from "react";
-import init, {get_person, parse} from "../../../pkg";
+import init, {get_person, parse, run} from "wasm-lib";
 
 export function CodeEditor() {
     const [code, setCode] = useState("// type your code...");
@@ -22,14 +23,22 @@ export function CodeEditor() {
         setCode(code + `\n${person.name} ${person.age} ${person.xyz}`);
     }
 
+    function runCode() {
+        console.log(run());
+    }
+
     return (
         <div>
-            <button onClick={logPerson}>test struct</button>
-            <button onClick={test}>Test</button>
+            <h1 className={"title"}>Armulator</h1>
+            <div style={{height: "45px", display: "flex", justifyContent: "center"}}>
+                <button className={"btnRun"} onClick={runCode}>Run</button>
+            </div>
+
+            {/*<button onClick={logPerson}>test struct</button>
+            <button onClick={test}>Test</button>*/}
             <div>
                 <Editor
-                    height="100vh"
-                    width={`100%`}
+                    height="70vh"
                     language={"cpp"}
                     theme={"vs-dark"}
                     value={code}
