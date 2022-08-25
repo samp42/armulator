@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import init, {add, parse} from "wasm-lib";
 import MiddleSection from "./components/middle-section/MiddleSection";
+import init from "./pkg";
 
 function App() {
   useEffect(() => {
-    init();
+    init().then(_ => { /* do nothing */ });
   }, []);
   return (
       <div className="App">
