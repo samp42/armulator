@@ -1,6 +1,8 @@
 pub mod memory {
 
     use wasm_bindgen::prelude::*;
+    use serde::{Serialize, Deserialize};
+
 
     // --------------------------------------------------------------------------------
     // Instruction Memory Fields
@@ -15,6 +17,7 @@ pub mod memory {
         pub memValue: u32,
     }
 
+    #[derive(Serialize, Deserialize)]
     pub struct SerializableInstructionMemFields {
         pub register: String,
         pub value: u32,
