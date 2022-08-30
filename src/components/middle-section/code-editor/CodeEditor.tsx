@@ -1,7 +1,7 @@
 import Editor from "@monaco-editor/react";
 import './CodeEditor.css';
 import {useEffect, useState} from "react";
-import init, {get_person, parse, run} from "wasm-lib";
+import init, {get_person, parse, run} from "../../../pkg";
 
 export function CodeEditor() {
     const [code, setCode] = useState("// type your code...");
