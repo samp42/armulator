@@ -1,9 +1,10 @@
-// use exec::memory::SerializableInstructionMemFields;
 use wasm_bindgen::prelude::*;
 
+mod interpreter;
+
 #[wasm_bindgen]
-pub fn parse(inst: String) -> String {
-    return inst + " Yeah!"
+pub fn parse(prog: String) -> String {
+    return parse(prog);
 }
 
 #[wasm_bindgen]
